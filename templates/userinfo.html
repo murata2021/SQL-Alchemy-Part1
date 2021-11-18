@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{user.full_name}}{% endblock %}
+
+
+{% block content %}
+<h1>User Info</h1>
+    <ul>  
+        <li>First Name: {{user.first_name}}</li>
+        <li>Last Name: {{user.last_name}}</li>
+    </ul>
+
+    <img src="{{user.image_url}}" alt="" class="img-thumbnail">
+
+    <!-- <form action="/user/{{user.id}}/edit">
+        <button class="btn btn-warning">Edit User</button>
+    </form> -->
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+
+        <form action="/user/{{user.id}}/edit">
+            <button class="btn btn-warning">Edit User</button>
+        </form>
+        
+        <form action="/user/{{user.id}}/delete" method="POST">
+            <button class="btn btn-danger">Delete User</button>
+        </form>
+    </div>
+
+    <form action="/">
+        <button class="btn btn-secondary">Go to Main Page</button>
+    </form>
+
+    <!-- <form action="/user/{{user.id}}/delete" method="POST">
+        <button class="btn btn-danger">Delete User</button>
+    </form>
+
+
+
+    <form action="/">
+        <button class="btn btn-secondary">Go to Main Page</button>
+    </form> -->
+    
+{% endblock %}
+    
